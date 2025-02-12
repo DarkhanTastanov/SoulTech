@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.myfaith"
-    compileSdk = 34
+    namespace = "com.example.mynavigationapp"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.myfaith"
+        applicationId = "com.example.mynavigationapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,15 +33,25 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
-
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.core.ktx)
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation(libs.material)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.media3.common.ktx)
+    implementation(libs.play.services.maps)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
