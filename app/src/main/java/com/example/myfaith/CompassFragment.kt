@@ -29,6 +29,7 @@ class CompassFragment : Fragment(), SensorEventListener {
     private var accelerometer: Sensor? = null
     private var magnetometer: Sensor? = null
     private var currentDegree = 0f
+    private var lastAzimuth = 0f // Store the last azimuth value
     private var gravity: FloatArray = FloatArray(3)
     private var magneticField: FloatArray = FloatArray(3)
     private var rotationMatrix: FloatArray = FloatArray(9)
@@ -104,28 +105,28 @@ class CompassFragment : Fragment(), SensorEventListener {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onSensorChanged(event: SensorEvent?) {
-        when (event?.sensor?.type) {
-            Sensor.TYPE_ACCELEROMETER -> {
-                System.arraycopy(event.values, 0, gravity, 0, 3)
+        event?.let {  // Use let to safely handle the nullable event
+            when (it.sensor.type) { // Access members of 'it' (non-null event)
+                Sensor.TYPE_ACCELEROMETER -> {
+                    System.arraycopy(it.values, 0, gravity, 0, 3)
+                }
+                Sensor.TYPE_MAGNETIC_FIELD -> {
+                    System.arraycopy(it.values, 0, magneticField, 0, 3)
+
+                    SensorManager.getRotationMatrix(rotationMatrix, null, gravity, magneticField)
+                    SensorManager.getOrientation(rotationMatrix, orientation)
+
+                    // Correctly calculate and normalize azimuth
+                    var azimuth = (Math.toDegrees(orientation[0].toDouble()) * -1).toFloat()
+                    azimuth = (azimuth + + -90 + 360) % 360 // Normalize to 0-360 range
+
+                    currentDegree = azimuth
+                    compassImage.rotation = currentDegree
+
+                    val roundedDegree = currentDegree.roundToInt()
+                    degreeTextView.text = "$roundedDegree°"
+                }
             }
-            Sensor.TYPE_MAGNETIC_FIELD -> {
-                System.arraycopy(event.values, 0, magneticField, 0, 3)
-
-                SensorManager.getRotationMatrix(rotationMatrix, null, gravity, magneticField)
-                SensorManager.getOrientation(rotationMatrix, orientation)
-
-                val azimuth = (Math.toDegrees(orientation[0].toDouble()) * -1).toFloat()
-
-                currentDegree = azimuth
-                compassImage.rotation = currentDegree
-
-                val roundedDegree = currentDegree.roundToInt()
-                degreeTextView.text = "$roundedDegree°"
-            }
-            // Add other sensor types here if needed
-            // Example:
-            // Sensor.TYPE_GYROSCOPE -> { ... }
-            else -> {} // Handle default case if needed
         }
     }
 
