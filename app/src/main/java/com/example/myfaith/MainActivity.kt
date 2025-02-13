@@ -1,4 +1,4 @@
-package com.example.mynavigationapp
+package com.example.myfaith
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.mynavigationapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class  MainActivity : AppCompatActivity() {
