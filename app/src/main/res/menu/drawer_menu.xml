@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_events"
+            android:title="Events" />
+        <item
+            android:id="@+id/nav_communities"
+            android:title="Communities" />
+        <item
+            android:id="@+id/nav_progress"
+            android:title="Progress" />
+    </group>
+
+    <item android:title="Actions">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/nav_logout"
+                android:title="Log Out" />
+        </menu>
+    </item>
+
+</menu>

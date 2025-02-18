@@ -2,16 +2,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/compassFragment">
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myfaith.HomeFragment"  android:label="Home"
+        tools:layout="@layout/home_page_fragment" />
 
     <fragment
         android:id="@+id/compassFragment"
-        android:name="com.example.mynavigationapp.CompassFragment"
-        android:label="CompassFragment"
+        android:name="com.example.myfaith.CompassFragment"  android:label="Compass"
         tools:layout="@layout/fragment_compass" />
+
     <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.mynavigationapp.MapsFragment"
-        android:label="MapsFragment"
+        android:name="com.example.myfaith.MapsFragment"  android:label="Maps"
         tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myfaith.ProfileFragment"  android:label="Profile"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.myfaith.NotificationFragment"  android:label="Notifications"
+        tools:layout="@layout/notification_fragment" />
+
 </navigation>

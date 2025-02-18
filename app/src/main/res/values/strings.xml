@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Faith</string>
+    <string-array name="quotes">
+        <item>Quote 1 text here.</item>
+        <item>Another inspiring quote.</item>
+        <item>A third quote.</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
