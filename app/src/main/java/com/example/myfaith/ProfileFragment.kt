@@ -13,6 +13,5 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.profile_fragment, container, false)
-        // Add your profile logic here
     }
 }

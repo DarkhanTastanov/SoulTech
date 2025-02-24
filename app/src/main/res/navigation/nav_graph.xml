@@ -6,27 +6,50 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.myfaith.HomeFragment"  android:label="Home"
+        android:name="com.example.myfaith.HomeFragment"
+        android:label="Home"
         tools:layout="@layout/home_page_fragment" />
 
     <fragment
         android:id="@+id/compassFragment"
-        android:name="com.example.myfaith.CompassFragment"  android:label="Compass"
+        android:name="com.example.myfaith.CompassFragment"
+        android:label="Compass"
         tools:layout="@layout/fragment_compass" />
 
     <fragment
+        android:id="@+id/quranFragment"
+        android:name="com.example.myfaith.QuranFragment"
+        android:label="Quran"
+        tools:layout="@layout/quran_fragment" />
+
+<!--    <fragment-->
+<!--        android:id="@+id/surahFragment"-->
+<!--        android:name="com.example.myfaith.SurahFragment"-->
+<!--        android:label="Surah"-->
+<!--        tools:layout="@layout/surah_fragment" />-->
+
+    <fragment
         android:id="@+id/mapsFragment"
-        android:name="com.example.myfaith.MapsFragment"  android:label="Maps"
+        android:name="com.example.myfaith.MapsFragment"
+        android:label="Maps"
         tools:layout="@layout/fragment_maps" />
 
     <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.example.myfaith.BooksFragment"
+        android:label="Books"
+        tools:layout="@layout/books_fragment" />
+
+    <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.myfaith.ProfileFragment"  android:label="Profile"
+        android:name="com.example.myfaith.ProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/profile_fragment" />
 
     <fragment
         android:id="@+id/notificationFragment"
-        android:name="com.example.myfaith.NotificationFragment"  android:label="Notifications"
+        android:name="com.example.myfaith.NotificationFragment"
+        android:label="Notifications"
         tools:layout="@layout/notification_fragment" />
 
 </navigation>

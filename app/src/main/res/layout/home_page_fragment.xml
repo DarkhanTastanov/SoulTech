@@ -1,40 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/home_buttons"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_below="@+id/prayer_times_layout"
-    android:layout_centerHorizontal="true"
-    android:orientation="vertical"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:layout_gravity="center_horizontal">
+    <LinearLayout
+    android:id="@+id/top_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/quran_button"
+        <TextView
+            android:id="@+id/next_event"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ait, 25 days left" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quran" />
+        android:layout_gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <TextView
+                android:id="@+id/fajr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fajr" />
 
-    <Button
-        android:id="@+id/quote_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quote" />
+            <TextView
+                android:id="@+id/dhuhr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dhuhr" />
 
-    <Button
-        android:id="@+id/zikr_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zikr" />
+            <TextView
+                android:id="@+id/asr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Asr" />
 
-    <Button
-        android:id="@+id/books_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Books" />
+            <TextView
+                android:id="@+id/maghrib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maghrib" />
 
-    <Button
-        android:id="@+id/compass_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Compass" />
-</LinearLayout>
+            <TextView
+                android:id="@+id/isha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Isha" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+            <Button
+                android:id="@+id/quran_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quran" />
+
+            <Button
+                android:id="@+id/quote_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quote" />
+
+            <Button
+                android:id="@+id/zikr_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zikr" />
+
+            <Button
+                android:id="@+id/books_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Books" />
+
+            <Button
+                android:id="@+id/compass_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Compass" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

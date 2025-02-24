@@ -1,5 +1,6 @@
 package com.example.myfaith
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,8 +25,7 @@ class HomeFragment : Fragment() {
         val compassButton = view.findViewById<Button>(R.id.compass_button)
 
         quranButton.setOnClickListener {
-            // Navigate to Quran Fragment (if you have one)
-            // Example: findNavController().navigate(R.id.action_homeFragment_to_quranFragment)
+            findNavController().navigate(R.id.quranFragment)
         }
 
         quoteButton.setOnClickListener {
@@ -33,14 +33,13 @@ class HomeFragment : Fragment() {
         }
 
         zikrButton.setOnClickListener {
-            // Navigate to Zikr Activity
-            // Example:
-            // val intent = Intent(requireContext(), ZikrActivity::class.java)
-            // startActivity(intent)
+             val intent = Intent(requireContext(), ZikrActivity::class.java)
+             startActivity(intent)
+
         }
 
         booksButton.setOnClickListener {
-            // Handle books button click
+            findNavController().navigate(R.id.booksFragment)
         }
 
         compassButton.setOnClickListener {

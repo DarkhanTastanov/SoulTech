@@ -1,21 +1,19 @@
 package com.example.myfaith
 
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mynavigationapp.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment, R.id.notificationFragment, R.id.profileFragment, // Bottom Nav Destinations
-                R.id.nav_events, R.id.nav_communities, R.id.nav_progress, R.id.nav_settings, R.id.nav_logout // Drawer Destinations
+                R.id.nav_events, R.id.nav_communities, R.id.nav_progress, R.id.nav_map, R.id.nav_settings, R.id.nav_logout // Drawer Destinations
             ),
             drawerLayout
         )
@@ -61,8 +59,15 @@ class MainActivity : AppCompatActivity() {
                     // Handle Settings click
                     true
                 }
+                R.id.nav_map -> {
+                    val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                    navHostFragment.findNavController().navigate(R.id.mapsFragment)
+                    true
+                }
                 R.id.nav_logout -> {
-                    // Handle Logout click
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
                     true
                 }
                 else -> false

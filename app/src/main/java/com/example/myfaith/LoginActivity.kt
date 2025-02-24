@@ -15,10 +15,14 @@ class LoginActivity : AppCompatActivity() {
         val emailOrNumberField = findViewById<EditText>(R.id.login_email_number)
         val passwordField = findViewById<EditText>(R.id.login_password)
         val loginButton = findViewById<Button>(R.id.login_button)
-
+        val registerButton = findViewById<Button>(R.id.register_button)
         loginButton.setOnClickListener {
-            // Navigate to MainActivity on successful login
             val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        registerButton.setOnClickListener {
+            val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
             finish()
         }
