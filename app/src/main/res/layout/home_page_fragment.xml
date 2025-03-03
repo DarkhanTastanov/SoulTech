@@ -3,93 +3,227 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal">
+
     <LinearLayout
-    android:id="@+id/top_header"
+        android:id="@+id/top_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:gravity="center">
+        android:gravity="end"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/next_event"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ait, 25 days left" />
+            android:textColor="@color/left_panel"
+            android:text="Oraza, 1 kun qaldy"
+            android:textSize="20sp" />
+
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_margin="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="1dp"
+            android:orientation="horizontal">
+
             <TextView
                 android:id="@+id/fajr"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Fajr" />
+                android:gravity="center"
+                android:text="Fajr\n10:30"
+                android:textSize="22sp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/left_panel"
+                android:background="@drawable/rounded_background"/>
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/quran_button"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:text="Quran"
+                    android:textSize="20sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/left_panel"
+
+                    android:backgroundTint="@android:color/transparent"
+                    android:background="@drawable/rounded_background"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="1dp"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/dhuhr"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Dhuhr" />
-
+                android:gravity="center"
+                android:text="Dhuhr\n10:30"
+                android:textSize="22sp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/left_panel"
+                android:background="@drawable/rounded_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/quote_button"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:text="Quote"
+                    android:textSize="20sp"
+                    android:padding="8dp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/left_panel"
+                    android:background="@drawable/rounded_background"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="1dp"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/asr"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Asr" />
+                android:gravity="center"
+                android:text="Asr\n10:30"
+                android:textSize="22sp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/left_panel"
 
+                android:background="@drawable/rounded_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/zikr_button"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:text="Zikr"
+                    android:textSize="20sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/left_panel"
+
+                    android:background="@drawable/rounded_background"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="1dp"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/maghrib"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Maghrib" />
+                android:gravity="center"
+                android:text="Maghrib\n10:30"
+                android:textSize="22sp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/left_panel"
 
+                android:background="@drawable/rounded_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/books_button"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:text="Books"
+                    android:textSize="20sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/left_panel"
+
+                    android:background="@drawable/rounded_background"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="1dp"
+            android:orientation="horizontal">
             <TextView
                 android:id="@+id/isha"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:text="Isha" />
-        </LinearLayout>
+                android:gravity="center"
+                android:text="Isha\n10:30"
+                android:textSize="22sp"
+                android:padding="8dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/left_panel"
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-            <Button
-                android:id="@+id/quran_button"
-                android:layout_width="wrap_content"
+                android:background="@drawable/rounded_background"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="Quran" />
+                android:orientation="horizontal"
+                android:gravity="center">
+                <Button
+                    android:id="@+id/compass_button"
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:text="Compass"
+                    android:textSize="20sp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/left_panel"
 
-            <Button
-                android:id="@+id/quote_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Quote" />
-
-            <Button
-                android:id="@+id/zikr_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Zikr" />
-
-            <Button
-                android:id="@+id/books_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Books" />
-
-            <Button
-                android:id="@+id/compass_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Compass" />
+                    android:background="@drawable/rounded_background"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

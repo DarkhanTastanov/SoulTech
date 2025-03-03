@@ -6,20 +6,20 @@
 
     <fragment
         android:id="@+id/homeFragment"
+        android:label=""
         android:name="com.example.myfaith.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/home_page_fragment" />
+        tools:layout="@layout/home_page_fragment"/>
 
     <fragment
         android:id="@+id/compassFragment"
         android:name="com.example.myfaith.CompassFragment"
-        android:label="Compass"
+        android:label=""
         tools:layout="@layout/fragment_compass" />
 
     <fragment
         android:id="@+id/quranFragment"
+        android:label=""
         android:name="com.example.myfaith.QuranFragment"
-        android:label="Quran"
         tools:layout="@layout/quran_fragment" />
 
 <!--    <fragment-->
@@ -30,26 +30,26 @@
 
     <fragment
         android:id="@+id/mapsFragment"
+        android:label=""
         android:name="com.example.myfaith.MapsFragment"
-        android:label="Maps"
         tools:layout="@layout/fragment_maps" />
 
     <fragment
         android:id="@+id/booksFragment"
+        android:label=""
         android:name="com.example.myfaith.BooksFragment"
-        android:label="Books"
         tools:layout="@layout/books_fragment" />
 
     <fragment
         android:id="@+id/profileFragment"
+        android:label=""
         android:name="com.example.myfaith.ProfileFragment"
-        android:label="Profile"
         tools:layout="@layout/profile_fragment" />
 
     <fragment
         android:id="@+id/notificationFragment"
+        android:label=""
         android:name="com.example.myfaith.NotificationFragment"
-        android:label="Notifications"
         tools:layout="@layout/notification_fragment" />
 
 </navigation>

@@ -7,7 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="left_panel">#f2f2ec</color>
     <color name="button_background">#2196F3</color>  <color name="button_text">@color/white</color>
 
     <color name="bottom_nav_icon_color">@color/bottom_nav_icon_selector</color>
