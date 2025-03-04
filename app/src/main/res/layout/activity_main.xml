@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_gravity="bottom"
-        android:background="@android:color/transparent"
+        android:background="#66000000"
         app:menu="@menu/bottom_nav_menu"
         style="@style/BottomNavigationStyle"/>
 
