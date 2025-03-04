@@ -35,11 +35,17 @@
             android:name="com.example.myfaith.ZikrActivity"
             android:exported="false">
         </activity>
-        <activity android:name="com.example.myfaith.LoginActivity"></activity>
-        <activity android:name="com.example.myfaith.RegistrationActivity"></activity>
+        <activity
+            android:name="com.example.myfaith.LoginActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name="com.example.myfaith.RegistrationActivity"
+            android:exported="false">
+        </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCGtHxSvGnCq7wzU2Mrt_NGPm-3I7V7gpM" />
+            android:value="AIzaSyBU-hVdtGr6qD3220iOhHOMH1VYvj8cnb8" />
     </application>
 
 </manifest>
