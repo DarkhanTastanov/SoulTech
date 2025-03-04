@@ -16,6 +16,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.mynavigationapp.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                 or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION)
@@ -82,10 +82,25 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.mapsFragment -> {
+                    setBottomNavigationVisibility(false)
+                }
+                else -> {
+                    setBottomNavigationVisibility(true)
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun setBottomNavigationVisibility(isVisible: Boolean) {
+        findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
 }
