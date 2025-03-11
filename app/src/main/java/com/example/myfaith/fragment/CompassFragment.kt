@@ -1,4 +1,4 @@
-package com.example.myfaith
+package com.example.myfaith.fragment
 
 import android.Manifest
 import android.content.Context

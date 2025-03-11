@@ -23,7 +23,7 @@
         android:theme="@style/Theme.MyFaith"
         tools:targetApi="31">
         <activity
-            android:name="com.example.myfaith.MainActivity"
+            android:name="com.example.myfaith.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,15 +32,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.myfaith.ZikrActivity"
+            android:name="com.example.myfaith.activity.ZikrActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name="com.example.myfaith.LoginActivity"
+            android:name="com.example.myfaith.activity.LoginActivity"
             android:exported="false">
         </activity>
         <activity
-            android:name="com.example.myfaith.RegistrationActivity"
+            android:name="com.example.myfaith.activity.RegistrationActivity"
             android:exported="false">
         </activity>
         <meta-data

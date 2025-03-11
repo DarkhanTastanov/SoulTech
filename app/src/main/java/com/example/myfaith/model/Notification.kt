@@ -1,4 +1,4 @@
-package com.example.myfaith
+package com.example.myfaith.model
 
 data class Notification(
     val title: String,

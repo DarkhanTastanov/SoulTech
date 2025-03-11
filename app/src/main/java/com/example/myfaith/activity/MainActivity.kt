@@ -1,4 +1,4 @@
-package com.example.myfaith
+package com.example.myfaith.activity
 
 
 import android.content.Intent

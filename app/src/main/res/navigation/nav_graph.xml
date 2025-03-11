@@ -7,19 +7,19 @@
     <fragment
         android:id="@+id/homeFragment"
         android:label=""
-        android:name="com.example.myfaith.HomeFragment"
+        android:name="com.example.myfaith.fragment.HomeFragment"
         tools:layout="@layout/home_page_fragment"/>
 
     <fragment
         android:id="@+id/compassFragment"
-        android:name="com.example.myfaith.CompassFragment"
+        android:name="com.example.myfaith.fragment.CompassFragment"
         android:label=""
         tools:layout="@layout/fragment_compass" />
 
     <fragment
         android:id="@+id/quranFragment"
         android:label=""
-        android:name="com.example.myfaith.QuranFragment"
+        android:name="com.example.myfaith.fragment.QuranFragment"
         tools:layout="@layout/quran_fragment" />
 
 <!--    <fragment-->
@@ -31,25 +31,25 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:label=""
-        android:name="com.example.myfaith.MapsFragment"
+        android:name="com.example.myfaith.fragment.MapsFragment"
         tools:layout="@layout/fragment_maps" />
 
     <fragment
         android:id="@+id/booksFragment"
         android:label=""
-        android:name="com.example.myfaith.BooksFragment"
+        android:name="com.example.myfaith.fragment.BooksFragment"
         tools:layout="@layout/books_fragment" />
 
     <fragment
         android:id="@+id/profileFragment"
         android:label=""
-        android:name="com.example.myfaith.ProfileFragment"
+        android:name="com.example.myfaith.fragment.ProfileFragment"
         tools:layout="@layout/profile_fragment" />
 
     <fragment
         android:id="@+id/notificationFragment"
         android:label=""
-        android:name="com.example.myfaith.NotificationFragment"
+        android:name="com.example.myfaith.fragment.NotificationFragment"
         tools:layout="@layout/notification_fragment" />
 
 </navigation>

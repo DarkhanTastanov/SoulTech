@@ -1,4 +1,4 @@
-package com.example.myfaith
+package com.example.myfaith.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
