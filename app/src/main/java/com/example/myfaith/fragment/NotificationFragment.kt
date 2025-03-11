@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfaith.model.Notification
+import com.example.myfaith.entity.Notification
 import com.example.myfaith.adapter.NotificationAdapter
 import com.example.mynavigationapp.R // Correct import
 

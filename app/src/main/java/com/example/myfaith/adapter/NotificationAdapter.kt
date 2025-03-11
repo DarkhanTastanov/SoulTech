@@ -1,5 +1,5 @@
 package com.example.myfaith.adapter
-import com.example.myfaith.model.Notification
+import com.example.myfaith.entity.Notification
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
