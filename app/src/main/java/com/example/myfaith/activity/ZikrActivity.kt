@@ -16,12 +16,17 @@ class ZikrActivity : AppCompatActivity() {
         val counterView = findViewById<TextView>(R.id.zikr_counter)
         val addButton = findViewById<Button>(R.id.zikr_add_button)
         val resetButton = findViewById<Button>(R.id.zikr_reset_button)
-
+        val minusButton = findViewById<Button>(R.id.zikr_minus_button)
         addButton.setOnClickListener {
             counter++
             counterView.text = counter.toString()
         }
-
+        minusButton.setOnClickListener {
+            if (counter > 0){
+                counter--
+                counterView.text = counter.toString()
+            }
+        }
         resetButton.setOnClickListener {
             counter = 0
             counterView.text = counter.toString()

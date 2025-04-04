@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="left_panel">#f2f2ec</color>
     <color name="button_background">#2196F3</color>  <color name="button_text">@color/white</color>
-
+    <color name="zikr_green">#6FAD82</color>
     <color name="bottom_nav_icon_color">@color/bottom_nav_icon_selector</color>
     <color name="bottom_nav_text_color">@color/bottom_nav_text_selector</color>
 
