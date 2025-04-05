@@ -81,11 +81,15 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_logout -> {
+                    val sharedPrefs = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+                    sharedPrefs.edit().clear().apply()
+
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
                     true
                 }
+
                 else -> false
             }
         }

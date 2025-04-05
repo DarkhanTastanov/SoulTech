@@ -1,5 +1,6 @@
 package com.example.myfaith.activity
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -9,8 +10,15 @@ import android.text.style.ForegroundColorSpan
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myfaith.datasource.ApiSource
+import com.example.myfaith.entity.LoginResponse
+import com.example.myfaith.utils.hashPassword
 import com.example.mynavigationapp.R
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,9 +53,31 @@ class LoginActivity : AppCompatActivity() {
         textView.text = spannable
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            val username = emailOrNumberField.text.toString()
+            val password = passwordField.text.toString()
+            val hashed = hashPassword(password)
+
+            ApiSource.login.loginUser(username, hashed).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    if (response.isSuccessful && response.body() != null) {
+                        val token = response.body()!!.token
+                        val sharedPrefs = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
+                        sharedPrefs.edit().putString("auth_token", token).apply()
+
+                        // Navigate to MainActivity
+                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        // Handle wrong credentials
+                        Toast.makeText(this@LoginActivity, "Login failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(this@LoginActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
         registerButton.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
