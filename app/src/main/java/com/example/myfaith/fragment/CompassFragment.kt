@@ -27,6 +27,7 @@ import android.location.Geocoder
 import android.location.Location
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import java.util.*
 
 class CompassFragment : Fragment(), SensorEventListener {
@@ -66,6 +67,7 @@ class CompassFragment : Fragment(), SensorEventListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = View.GONE
 
         compassImage = view.findViewById(R.id.compass_image)
         degreeTextView = view.findViewById(R.id.degree_text_view)
@@ -138,8 +140,11 @@ class CompassFragment : Fragment(), SensorEventListener {
 
     override fun onResume() {
         super.onResume()
+        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = View.GONE
+
         Log.d("CompassFragment", "Fragment resumed")
     }
+
 
     override fun onPause() {
         super.onPause()

@@ -3,27 +3,30 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/homeFragment"
+            android:title="@string/home_page"/>
+        <item
             android:id="@+id/nav_events"
-            android:title="Events" />
+            android:title="@string/events" />
         <item
             android:id="@+id/nav_communities"
-            android:title="Communities" />
+            android:title="@string/communities" />
         <item
             android:id="@+id/nav_progress"
-            android:title="Progress" />
+            android:title="@string/progress" />
         <item
             android:id="@+id/nav_map"
-            android:title="Map" />
+            android:title="@string/map" />
     </group>
 
-    <item android:title="Actions">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/nav_settings"
-                android:title="Settings" />
+                android:title="@string/settings" />
             <item
                 android:id="@+id/nav_logout"
-                android:title="Log Out" />
+                android:title="@string/log_out" />
         </menu>
     </item>
 

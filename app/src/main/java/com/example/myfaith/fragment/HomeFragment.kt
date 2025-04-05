@@ -9,14 +9,16 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myfaith.activity.ZikrActivity
-import com.example.mynavigationapp.R // Make sure this import is correct
+import com.example.mynavigationapp.R
 
 class HomeFragment : Fragment() {
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val view = inflater.inflate(R.layout.home_page_fragment, container, false)
 
         val quranButton = view.findViewById<Button>(R.id.quran_button)
@@ -30,7 +32,6 @@ class HomeFragment : Fragment() {
         }
 
         quoteButton.setOnClickListener {
-            // Handle quote button click
         }
 
         zikrButton.setOnClickListener {
@@ -44,8 +45,7 @@ class HomeFragment : Fragment() {
         }
 
         compassButton.setOnClickListener {
-            // Navigate to Compass Fragment
-            findNavController().navigate(R.id.compassFragment) // Use the ID from your nav_graph
+            findNavController().navigate(R.id.compassFragment)
         }
 
         return view

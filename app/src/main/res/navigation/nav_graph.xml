@@ -52,4 +52,15 @@
         android:name="com.example.myfaith.fragment.NotificationFragment"
         tools:layout="@layout/notification_fragment" />
 
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:label=""
+        android:name="com.example.myfaith.fragment.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/app_settings"
+        android:label=""
+        android:name="com.example.myfaith.fragment.AppSettingsFragment"
+        tools:layout="@layout/fragment_app_settings" />
 </navigation>

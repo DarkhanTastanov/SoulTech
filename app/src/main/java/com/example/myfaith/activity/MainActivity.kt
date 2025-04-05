@@ -1,6 +1,7 @@
 package com.example.myfaith.activity
 
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -15,6 +16,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.myfaith.utils.LocaleHelper
 import com.example.mynavigationapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -35,23 +37,27 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment) // Get the NavController
+        val navController = findNavController(R.id.nav_host_fragment)
 
-        setSupportActionBar(toolbar) // Set up the toolbar
+        setSupportActionBar(toolbar)
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.homeFragment, R.id.notificationFragment, R.id.profileFragment, // Bottom Nav Destinations
-                R.id.nav_events, R.id.nav_communities, R.id.nav_progress, R.id.nav_map, R.id.nav_settings, R.id.nav_logout // Drawer Destinations
+                R.id.homeFragment, R.id.notificationFragment, R.id.profileFragment, R.id.settingsFragment,
+                R.id.nav_events, R.id.nav_communities, R.id.nav_progress, R.id.nav_map, R.id.nav_settings, R.id.nav_logout
             ),
             drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        // Handle Navigation Drawer item clicks
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.homeFragment -> {
+                    val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                    navHostFragment.findNavController().navigate(R.id.homeFragment)
+                    true
+                }
                 R.id.nav_events -> {
                     // Handle Events click
                     true
@@ -65,7 +71,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_settings -> {
-                    // Handle Settings click
+                    val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                    navHostFragment.findNavController().navigate(R.id.settingsFragment)
                     true
                 }
                 R.id.nav_map -> {
@@ -100,7 +107,13 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    fun setBottomNavigationVisibility(isVisible: Boolean) {
+    private fun setBottomNavigationVisibility(isVisible: Boolean) {
         findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = if (isVisible) View.VISIBLE else View.GONE
     }
+    override fun attachBaseContext(newBase: Context) {
+        val lang = LocaleHelper.getLanguage(newBase)
+        val context = LocaleHelper.setLocale(newBase, lang)
+        super.attachBaseContext(context)
+    }
+
 }

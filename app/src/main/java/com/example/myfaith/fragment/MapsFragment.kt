@@ -64,9 +64,12 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
 
         activity?.findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = View.GONE
 
-        // Initialize Places API with the correct API key retrieval
         Places.initialize(requireContext(), getString(R.string.google_maps_api_key))
         placesClient = Places.createClient(requireContext())
+    }
+    override fun onResume() {
+        super.onResume()
+        activity?.findViewById<BottomNavigationView>(R.id.bottom_nav_view)?.visibility = View.GONE
     }
 
     override fun onMapReady(map: GoogleMap) {
@@ -132,8 +135,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback {
         googleMap.clear()
 
         queries.forEach { query ->
-            // Increase the radius by creating a larger rectangular bounds
-            val radius = 500.0 // 5000 meters (5 kilometers)
+            val radius = 500.0
             val northEast = LatLng(location.latitude + radius / 111000.0, location.longitude + radius / (111000.0 * Math.cos(location.latitude * Math.PI / 180.0)))
             val southWest = LatLng(location.latitude - radius / 111000.0, location.longitude - radius / (111000.0 * Math.cos(location.latitude * Math.PI / 180.0)))
             val bounds = RectangularBounds.newInstance(southWest, northEast)
