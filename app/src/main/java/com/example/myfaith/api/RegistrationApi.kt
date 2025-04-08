@@ -6,12 +6,12 @@ import retrofit2.http.POST
 
 interface RegistrationApi {
     @FormUrlEncoded
-    @POST("/users/register")
+    @POST("users/register/")
     fun registerUser(
         @Field("email") email: String,
-        @Field("number") number: String,
-        @Field("userFullName") name: String,
         @Field("username") username: String,
-        @Field("password") password: String
+        @Field("password") password: String,
+        @Field("full_name") fullName: String,
+        @Field("number") number: String
     ): Call<RegistrationResponse>
 }

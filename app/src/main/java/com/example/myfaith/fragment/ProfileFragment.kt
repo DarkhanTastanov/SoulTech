@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.mynavigationapp.R // Make sure this import is correct
+import com.example.mynavigationapp.R
 
 class ProfileFragment : Fragment() {
 

@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
 
+        val bottomNav: BottomNavigationView = findViewById(R.id.bottom_nav_view)
+
         val navController = findNavController(R.id.nav_host_fragment)
 
         setSupportActionBar(toolbar)
@@ -48,6 +50,20 @@ class MainActivity : AppCompatActivity() {
             ),
             drawerLayout
         )
+
+        bottomNav.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.profile -> {
+                    navController.navigate(R.id.profileFragment)
+                    true
+                }
+                R.id.home -> {
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                else -> false
+            }
+        }
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 

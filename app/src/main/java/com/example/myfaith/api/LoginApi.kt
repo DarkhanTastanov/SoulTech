@@ -10,11 +10,11 @@ import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface LoginApi {
-    @POST("/login")
+    @POST("users/login/")
     @FormUrlEncoded
     fun loginUser(
-        @Field("username") username: String,
-        @Field("password") hashedPassword: String
+        @Field("email") email: String,
+        @Field("password") password: String
     ): Call<LoginResponse>
 
 }

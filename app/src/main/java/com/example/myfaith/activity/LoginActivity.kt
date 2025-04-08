@@ -25,10 +25,25 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val prefs = getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
+        val token = prefs.getString("auth_token", null)
+        if (!token.isNullOrEmpty()) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+
         val emailOrNumberField = findViewById<EditText>(R.id.login_email_or_number)
         val passwordField = findViewById<EditText>(R.id.login_password)
         val loginButton = findViewById<Button>(R.id.login_button)
         val registerButton = findViewById<TextView>(R.id.register_text)
+
+        val prefillEmail = intent.getStringExtra("email")
+        val prefillPassword = intent.getStringExtra("password")
+
+        prefillEmail?.let {
+            emailOrNumberField.setText(it)
+            emailOrNumberField.requestFocus()
+        }
 
         val textView = findViewById<TextView>(R.id.register_text)
         val fullText = "Don't have an account? Sign up"
@@ -53,23 +68,20 @@ class LoginActivity : AppCompatActivity() {
         textView.text = spannable
 
         loginButton.setOnClickListener {
-            val username = emailOrNumberField.text.toString()
+            val email = emailOrNumberField.text.toString()
             val password = passwordField.text.toString()
-            val hashed = hashPassword(password)
 
-            ApiSource.login.loginUser(username, hashed).enqueue(object : Callback<LoginResponse> {
+            ApiSource.login.loginUser(email, password).enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful && response.body() != null) {
                         val token = response.body()!!.token
                         val sharedPrefs = getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
                         sharedPrefs.edit().putString("auth_token", token).apply()
 
-                        // Navigate to MainActivity
                         val intent = Intent(this@LoginActivity, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
-                        // Handle wrong credentials
                         Toast.makeText(this@LoginActivity, "Login failed", Toast.LENGTH_SHORT).show()
                     }
                 }
