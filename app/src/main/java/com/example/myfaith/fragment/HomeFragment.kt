@@ -9,7 +9,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.myfaith.activity.ZikrActivity
-import com.example.mynavigationapp.R
+import com.example.myfaith.R
 
 class HomeFragment : Fragment() {
 

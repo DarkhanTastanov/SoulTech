@@ -22,11 +22,11 @@
         android:name="com.example.myfaith.fragment.QuranFragment"
         tools:layout="@layout/quran_fragment" />
 
-<!--    <fragment-->
-<!--        android:id="@+id/surahFragment"-->
-<!--        android:name="com.example.myfaith.SurahFragment"-->
-<!--        android:label="Surah"-->
-<!--        tools:layout="@layout/surah_fragment" />-->
+    <!--    <fragment-->
+    <!--        android:id="@+id/surahFragment"-->
+    <!--        android:name="com.example.myfaith.SurahFragment"-->
+    <!--        android:label="Surah"-->
+    <!--        tools:layout="@layout/surah_fragment" />-->
 
     <fragment
         android:id="@+id/mapsFragment"
@@ -63,4 +63,10 @@
         android:label=""
         android:name="com.example.myfaith.fragment.AppSettingsFragment"
         tools:layout="@layout/fragment_app_settings" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.myfaith.fragment.EventsFragment"
+        tools:layout="@layout/fragment_events" />
+        />
 </navigation>

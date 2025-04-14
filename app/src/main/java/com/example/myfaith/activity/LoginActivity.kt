@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.myfaith.datasource.ApiSource
 import com.example.myfaith.entity.LoginResponse
 import com.example.myfaith.utils.hashPassword
-import com.example.mynavigationapp.R
+import com.example.myfaith.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

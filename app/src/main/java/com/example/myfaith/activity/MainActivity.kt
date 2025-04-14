@@ -17,7 +17,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.myfaith.utils.LocaleHelper
-import com.example.mynavigationapp.R
+import com.example.myfaith.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -75,7 +75,8 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_events -> {
-                    // Handle Events click
+                    val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                    navHostFragment.findNavController().navigate(R.id.eventsFragment)
                     true
                 }
                 R.id.nav_communities -> {

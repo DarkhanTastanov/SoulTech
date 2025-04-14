@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mynavigationapp"
+    namespace = "com.example.myfaith"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mynavigationapp"
+        applicationId = "com.example.myfaith"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -16,6 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     buildTypes {
         release {
@@ -30,12 +31,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures{
+        viewBinding = true
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        viewBinding = true
-    }
+
 }
 
 dependencies {
