@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1E1E1E"
+    tools:context=".fragment.QuranFragment">
+
+    <!-- Header section with Surah details -->
+    <LinearLayout
+        android:id="@+id/surahHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#2D2D2D"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/surahTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="56. әл-Уақи'а"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/surahInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Меккелік • 96 Аят"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:id="@+id/paraInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Пара 27 • ¼ Hizb 54"
+            android:textColor="#4CD3A5"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- RecyclerView to display Quran verses -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/surahHeader"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

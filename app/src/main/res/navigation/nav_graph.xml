@@ -20,7 +20,7 @@
         android:id="@+id/quranFragment"
         android:label=""
         android:name="com.example.myfaith.fragment.QuranFragment"
-        tools:layout="@layout/quran_fragment" />
+        tools:layout="@layout/fragment_quran" />
 
     <!--    <fragment-->
     <!--        android:id="@+id/surahFragment"-->
