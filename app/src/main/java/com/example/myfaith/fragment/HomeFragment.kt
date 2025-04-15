@@ -31,8 +31,8 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.quranFragment)
         }
 
-        quoteButton.setOnClickListener {
-        }
+
+
 
         zikrButton.setOnClickListener {
              val intent = Intent(requireContext(), ZikrActivity::class.java)
