@@ -2,14 +2,11 @@ package com.example.myfaith.view.fragment
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.location.Location
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.myfaith.model.utils.LocationHelper
 import com.example.myfaith.R
@@ -20,7 +17,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.*
 import com.google.android.libraries.places.api.net.*
-import com.google.android.material.appbar.AppBarLayout
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
 
