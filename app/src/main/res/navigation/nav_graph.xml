@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.HomeFragment"
+        tools:layout="@layout/home_page_fragment">
+        <action
+            android:id="@+id/action_homeFragment_to_quranFragment"
+            app:destination="@id/quranFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_compassFragment"
+            app:destination="@id/compassFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_booksFragment"
+            app:destination="@id/booksFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_zikrFragment"
+            app:destination="@id/zikrFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.myfaith.view.fragment.FavoritesFragment"
+        android:label="Favorites"
+        tools:layout="@layout/fragment_favorites">
+
+        <action
+            android:id="@+id/action_favoritesFragment_to_quoteFragment"
+            app:destination="@id/quoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="com.example.myfaith.view.fragment.BookDetailFragment"
+        android:label="BookDetail"
+        tools:layout="@layout/fragment_book_detail">
+
+        <!-- ВАЖНО: аргумент для SafeArgs -->
+        <argument
+            android:name="bookId"
+            app:argType="integer" />
+
+        <deepLink
+            app:uri="https://myfaith.kz/book/{bookId}" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="com.example.myfaith.view.fragment.BooksFragment"
+        android:label="Books">
+
+        <action
+            android:id="@+id/action_booksFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/compassFragment"
+        android:name="com.example.myfaith.view.fragment.CompassFragment"
+        android:label=""
+        tools:layout="@layout/fragment_compass" />
+
+    <fragment
+        android:id="@+id/quranFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.QuranFragment"
+        tools:layout="@layout/fragment_quran" >
+
+        <argument
+            android:name="surahId"
+            app:argType="integer"
+            android:defaultValue="0" />
+
+        <deepLink
+            app:uri="https://myfaith.kz/quran/{surahId}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.MapsFragment"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/LessonsListFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.LessonListFragment"
+        tools:layout="@layout/books_fragment" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.ProfileFragment"
+        tools:layout="@layout/profile_fragment" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.NotificationFragment"
+        tools:layout="@layout/notification_fragment" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.SettingsFragment"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_app_settings"
+            app:destination="@id/app_settings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/app_settings"
+        android:label=""
+        android:name="com.example.myfaith.view.fragment.AppSettingsFragment"
+        tools:layout="@layout/fragment_app_settings" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.myfaith.view.fragment.EventsFragment"
+        tools:layout="@layout/fragment_events" />
+    <fragment
+        android:id="@+id/zikrFragment"
+        android:name="com.example.myfaith.view.fragment.ZikrFragment"
+        tools:layout="@layout/activity_zikr" />
+
+    <fragment
+        android:id="@+id/quoteFragment"
+        android:name="com.example.myfaith.view.fragment.QuoteFragment"
+        android:label="Quote"
+        tools:layout="@layout/fragment_quote">
+
+        <action
+            android:id="@+id/action_quoteFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+</navigation>
+
+
+
+
+
+
+
+
+
+
+
